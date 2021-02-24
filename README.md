@@ -3,7 +3,7 @@
 # Overview of the Project
 
 ## Problem Statement - 
-#### Detecting Covid19 from Chest X-ray images of patient using Quantum Circuit
+#### Detecting Covid19 from Chest X-ray images of patient using Quantum Neural Network
 
 ## Dataset used - 
 We have used [this datset](https://www.kaggle.com/pranavraikokte/covid19-image-dataset) from Kaggle which contains 250 training and 65 testing images for our model. 
@@ -55,7 +55,7 @@ While Predicting, we first give input to the Model-1. If it predicts as Normal p
 ![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/train_acc_plot_model_2.png?raw=true)
 
 
-# Some drawbacks in the draft due to lack of computationl resources - 
+# Some drawbacks in the draft due to lack of computational resources - 
 
 1. The real x-ray images in the dataset is enough large to contain a lots of information. But due to lack of computational resources we reduced the size to 28x28 using openCV library, which may have suppressed a lot of important informations. 
 Later with the availability of more computational resources we can use 256x256 dimensional image which will incrase the accuracy of the model. 
