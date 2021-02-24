@@ -31,6 +31,7 @@ After the Quanvolutional layers, we have the classifier model. The classifier mo
 Model-1 classifies between two classes - 'Normal Person' and 'Covid19/Viral Pnemonia'. 
 
 Model-2 classifies between two classes - 'Covid10' and 'Viral Pneumonia'. 
+![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/models.png)
 
 ##### We have created two notebooks for this. 
 
@@ -52,3 +53,21 @@ While Predicting, we first give input to the Model-1. If it predicts as Normal p
 ![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/cost_plot_model_2.png?raw=true)
 #### Trainging accuracy plot for Model-2
 ![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/train_acc_plot_model_2.png?raw=true)
+
+
+# Some drawbacks in the draft due to lack of computationl resources - 
+
+1. The real x-ray images in the dataset is enough large to contain a lots of information. But due to lack of computational resources we reduced the size to 28x28 using openCV library, which may have suppressed a lot of important informations. 
+Later with the availability of more computational resources we can use 256x256 dimensional image which will incrase the accuracy of the model. 
+
+2. Currently although after applying Quanvolution and flattening the data we had 256 features of each image, we used only 11 features by feature selection method due to lack of resources. We can try out with more features with availability of computational resources to experiment how accuracy imporves with more number of features. 
+
+3. Currently all the training and prediction has been done on simulator, not real Quantum computer (as it has been recommended not to train circuit on QC with that 250 USD credit), but we are really hopeful about some improvements if training is executed in a real Quantum computer, not a simulator.
+
+Now while training each model, number of times we call quantum circuit is equal to
+ (shots assigned to the device * number of training images * number of iteration)
+with this above rough calculation and as we have 250 training images, the resources required can be predicted easily.
+
+4. All the four quanvolutional layers applied on the image data is using uniformly generated random parameters, which are not furthet trained. 
+
+Later, we can experiment with training those quanvolutional layers too the way its done in classical convolution.
