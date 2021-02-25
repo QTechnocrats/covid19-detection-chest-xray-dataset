@@ -41,7 +41,7 @@ In [Notebook-2](https://github.com/QTechnocrats/covid19-detection-chest-xray-dat
 We have done this beacuse encoding 256 features to a quantum circuit is not a feasible approach. 
 
 ### Prediction
-While Predicting, we first give input to the Model-1. If it predicts as Normal person, then it is the final prediction assigned to the input. If not, then we give the same input to Model-2 and it finally predicts whether the chest x-ray is Covid-19 patient or Viral Pneumonia patient.
+While Predicting, we first give input to the Model-1. If it predicts as Normal person, then it is the final prediction assigned to the input. If not, then we give the same input to Model-2 and it finally predicts whether the chest x-ray reveals the patients has Covid-19 or Viral Pneumonia.
 
 ### Plots for Training cost and accuracy for Model-1 and Model-2
 
