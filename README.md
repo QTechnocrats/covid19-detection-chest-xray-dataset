@@ -13,7 +13,7 @@ We have used [this datset](https://www.kaggle.com/pranavraikokte/covid19-image-d
 ## Our Approach to the classifier- 
 
 ### Preprocessing the dataset
-Images given in the dataset is real life chest x-ray and is not previouly modified. So all have different dimensions. So we reduced the all the image size to a specific dimension. It would be more convenient to fix the image size to 256x256 but due to limitations of computational resources we have to reduce it to 28x28 size. 
+Images given in the dataset is real life chest x-ray and is not previouly modified. So all have different dimensions. So we reduced all the image size to a specific dimension. It would be more convenient to fix the image size to 256x256 but due to the limitations of computational resources we have to reduce it to 28x28 size. 
 Initially the dataset is provided in a folder format where all images of each classes are put in different folders. We used [this python script](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/script_conv_to_csv.py) to convert those images to 28x28 using openCV library and finally saved in csv format. You can get here the [train csv](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/train.csv) and [test csv](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/test.csv). 
 
 
@@ -43,15 +43,15 @@ We have done this beacuse encoding 256 features to a quantum circuit is not a fe
 ### Prediction
 While Predicting, we first give input to the Model-1. If it predicts as Normal person, then it is the final prediction assigned to the input. If not, then we give the same input to Model-2 and it finally predicts whether the chest x-ray is Covid10 patient or Viral Pneumonia patient.
 
-### Plots for Trainging cost and accuracy for Model-1 and Model-2
+### Plots for Training cost and accuracy for Model-1 and Model-2
 
 #### Cost Plot for Model-1
 ![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/cost_plot_model_1.png?raw=true)
-#### Trainging accuracy plot for Model-1
+#### Training accuracy plot for Model-1
 ![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/train_acc_plot_model_1.png?raw=true)
 #### Cost Plot for Model-2
 ![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/cost_plot_model_2.png?raw=true)
-#### Trainging accuracy plot for Model-2
+#### Training accuracy plot for Model-2
 ![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/train_acc_plot_model_2.png?raw=true)
 
 
