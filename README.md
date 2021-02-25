@@ -30,7 +30,7 @@ After the Quanvolutional layers, we have the classifier model. The classifier mo
 
 Model-1 classifies between two classes - 'Normal Person' and 'Covid19/Viral Pnemonia'. 
 
-Model-2 classifies between two classes - 'Covid10' and 'Viral Pneumonia'. 
+Model-2 classifies between two classes - 'Covid-19' and 'Viral Pneumonia'. 
 ![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/models.png)
 
 ##### We have created two notebooks for this. 
@@ -41,7 +41,7 @@ In [Notebook-2](https://github.com/QTechnocrats/covid19-detection-chest-xray-dat
 We have done this beacuse encoding 256 features to a quantum circuit is not a feasible approach. 
 
 ### Prediction
-While Predicting, we first give input to the Model-1. If it predicts as Normal person, then it is the final prediction assigned to the input. If not, then we give the same input to Model-2 and it finally predicts whether the chest x-ray is Covid10 patient or Viral Pneumonia patient.
+While Predicting, we first give input to the Model-1. If it predicts as Normal person, then it is the final prediction assigned to the input. If not, then we give the same input to Model-2 and it finally predicts whether the chest x-ray is Covid-19 patient or Viral Pneumonia patient.
 
 ### Plots for Training cost and accuracy for Model-1 and Model-2
 
