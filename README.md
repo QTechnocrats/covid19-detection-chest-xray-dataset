@@ -39,7 +39,7 @@ One important point to mention here, Intially we tried to use single model for m
 
 Also Here the accuracy of Model-1 is always higher than model-2 because differentiating 'Noraml Person' vs "covid/Viral Pneumonia' is easier than differentiating between 'covid' vs 'Viral Pneumonia'. 
 
-![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/models.png)
+![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/models.png?raw=true)
 
 #### We have created three notebooks for this, with three different apprroach to the feature size reduction technique and the feature map circuit design. 
 
@@ -66,7 +66,7 @@ While Predicting, we first give input to the Model-1. If it predicts as Normal p
 ![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/train_acc_plot_model_2.png?raw=true)
 
 
-# Some drawbacks in the current version, that we will be working on in the extended version of this project - 
+# Some room for improvement in the current version, that we will be working on in the extended version of this project - 
 
 1. The real x-ray images in the dataset is enough large to contain a lots of information. But due to lack of computational resources we reduced the size to 28x28 using openCV library, which may have suppressed a lot of important informations. 
 Later we wil experiment with 256x256 dimensional image which will incrase the accuracy of the model. 
@@ -77,3 +77,16 @@ Later we wil experiment with 256x256 dimensional image which will incrase the ac
 Later, we will experiment with training those quanvolutional layers too so that the modified dataset can contain much more data about the real images.
 
 4. We will also include the training result and final accuracy of models trained on more accurate simulators and gradually will try executing these on real Quantum computers to get more realistic experimental data. 
+
+
+# Reference -
+1. Saad Albawi, Tareq Abed Mohammed, and Saad Al-Zawi, "Understanding of a convolutional neural network, In 2017 International Conference on Engineering and Technology (ICET), pages 1-6. IEEE, 2017.
+
+2. Maxwell Henderson, Samriddhi Shakya, Shashindra Pradhan, and Tristan Cook.
+"Quanvolutional neural networks: powering image recognition with quantum circuits",
+Quantum Machine Intelligence, 2(1):19, 2020.
+
+3.Junhua Liu, Kwan Hui Lim, Kristin L Wood, Wei Huang, Chu Guo, and He-Liang Huang, "Hybrid quantum-classical convolutional neural networks",
+arXiv preprint arXiv:1911.02998, 2019.
+
+4. [Quanvolutional Neural Networks.](https://pennylane.ai/qml/demos/tutorial_quanvolution.html)
