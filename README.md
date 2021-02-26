@@ -24,14 +24,21 @@ We have extended the single layer approach of [Quanvolutional Neural Network](ht
 
 Initially Each images has the dimension of (28x28x1) which is fed to the first Quanvolutional layer and converted to (14x14x4). The 2nd Layer converts it to (7x7x16), 3rd layer to (3x3x64) and finally the 4th and last layer converts each to a (1x1x256) dimensional data matrix. 
 ![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/qnn.png?raw=true)
+
+
 Here although the parameters of the Quanvolutional Layer gates are uniformly randomized, We have considered the approach of training these parameters too and see if there is any improvement in the result later in the extended version of this project. 
 
 ### Classifier Model
-After the Quanvolutional layers, we have the classifier model. The classifier model consists of two subclassifiers each of which is a binary classifier. We dente those two by 'Model-1' and 'Model-2'.
+After the Quanvolutional layers, we have the classifier model. The classifier model consists of two subclassifiers each of which is a binary classifier. We dente those two by 'Model-1' and 'Model-2'. 
 
 Model-1 classifies between two classes - 'Normal Person' and 'Covid19/Viral Pnemonia'. 
 
 Model-2 classifies between two classes - 'Covid-19' and 'Viral Pneumonia'. 
+
+One important point to mention here, Intially we tried to use single model for multi class classification and result turned out to be quiet low. So the two model approach we considered as the final one. 
+
+Also Here the accuracy of Model-1 is always higher than model-2 because differentiating 'Noraml Person' vs "covid/Viral Pneumonia' is easier than differentiating between 'covid' vs 'Viral Pneumonia'. 
+
 ![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/models.png)
 
 ##### We have created two notebooks for this. 
