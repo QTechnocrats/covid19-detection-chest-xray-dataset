@@ -41,12 +41,15 @@ Also Here the accuracy of Model-1 is always higher than model-2 because differen
 
 ![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/models.png)
 
-##### We have created two notebooks for this. 
+#### We have created three notebooks for this, with three different apprroach to the feature size reduction technique and the feature map circuit design. 
 
-In [Notebook-1](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/quantum_classifier_1.ipynb) we have used 11 features from 256 feature sized input data. 
-In [Notebook-2](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/quantum_classifier_2.ipynb) we have reduced 256 features of each image to 4 using TruncatedSVD method. 
+In [Notebook-1](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/quantum_classifier_1.ipynb) we have used 11 features from 256 feature sized input data, extracted by Principal Data Analysis. Here we achieved an accuracy of approx 49% to 50%.
 
-We have done this beacuse encoding 256 features to a quantum circuit is not a feasible approach. 
+In [Notebook-2](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/quantum_classifier_2.ipynb) we have reduced 256 features of each image to 4 using TruncatedSVD method. This gave us a little lower accuracy in the range of 43% to 45%. 
+
+In [Notebook-3](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/quantum_classifier_3.ipynb) we have reduced the data further to 2 features only. Unexpectedly this gave us the highest of all previous approached, 60% accuracy. 
+
+We have done this beacuse encoding 256 features to a quantum circuit is not a feasible approach. Also more importantly, Quantum circuit seems to be performing better with lesser number of features. So we should more focus on in future to to reduce feature size efficiently not affecting the data patterns overall. 
 
 ### Prediction
 While Predicting, we first give input to the Model-1. If it predicts as Normal person, then it is the final prediction assigned to the input. If not, then we give the same input to Model-2 and it finally predicts whether the chest x-ray reveals the patients has Covid-19 or Viral Pneumonia.
@@ -63,19 +66,14 @@ While Predicting, we first give input to the Model-1. If it predicts as Normal p
 ![alt text](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/images/train_acc_plot_model_2.png?raw=true)
 
 
-# Some drawbacks in the draft due to lack of computational resources - 
+# Some drawbacks in the current version, that we will be working on in the extended version of this project - 
 
 1. The real x-ray images in the dataset is enough large to contain a lots of information. But due to lack of computational resources we reduced the size to 28x28 using openCV library, which may have suppressed a lot of important informations. 
-Later with the availability of more computational resources we can use 256x256 dimensional image which will incrase the accuracy of the model. 
+Later we wil experiment with 256x256 dimensional image which will incrase the accuracy of the model. 
 
-2. Currently although after applying Quanvolution and flattening the data we had 256 features of each image, we used only 11 features by feature selection method due to lack of resources. We can try out with more features with availability of computational resources to experiment how accuracy imporves with more number of features. 
+2. Currently although after applying Quanvolution and flattening the data we had 256 features of each image, we used only 11 features, 4 features and 2 features in [Notebook-1](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/quantum_classifier_1.ipynb), [Notebook-2](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/quantum_classifier_2.ipynb) and [Notebook-3](https://github.com/QTechnocrats/covid19-detection-chest-xray-dataset/blob/main/quantum_classifier_3.ipynb) respectively by various feature size reduction method. We can try out with more features to experiment whether accuracy improves with higher dimensional data or Quantum computers work better with lesser number of features only. 
 
-3. Currently all the training and prediction has been done on simulator, not real Quantum computer (as it has been recommended not to train circuit on QC with that 250 USD credit), but we are really hopeful about some improvements if training is executed in a real Quantum computer, not a simulator.
+3. All the four quanvolutional layers applied on the image data is using uniformly generated random parameters, which are not further trained. 
+Later, we will experiment with training those quanvolutional layers too so that the modified dataset can contain much more data about the real images.
 
-Now while training each model, number of times we call quantum circuit is equal to
- (shots assigned to the device * number of training images * number of iteration)
-with this above rough calculation and as we have 250 training images, the resources required can be predicted easily.
-
-4. All the four quanvolutional layers applied on the image data is using uniformly generated random parameters, which are not furthet trained. 
-
-Later, we can experiment with training those quanvolutional layers too the way its done in classical convolution.
+4. We will also include the training result and final accuracy of models trained on more accurate simulators and gradually will try executing these on real Quantum computers to get more realistic experimental data. 
